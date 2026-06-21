@@ -6,7 +6,10 @@
 # Input data
 #####################
 
-# Directory containing source files have additional columns. We want to convert to vcf format, which has fewer columns
+# Directory containing source files (these have additional columns)
+source_dir = /lab-share/CHIP-Strober-e2/Public/ben/rare_variant_s2e/preprocess_rare_variants/gtex.eur.pass.rare_maf_lt_0.0025.snvs.chr*.rare_variant_carriers_near_genes.tsv.gz
+
+# We want to convert source files to vcf format, which has fewer columns
 # Convert GTEx rare variant "near gene" files into the simplified
 # 5-column Borzoi variant input format:
 #
@@ -18,8 +21,16 @@
 # We retain only columns 1-5 and remove duplicate variant rows.
 
 INPUT_DIR="/lab-share/CHIP-Strober-e2/Public/ben/rare_variant_s2e/preprocess_rare_variants"
+
+#####################
+# Output data
+#####################
 OUTPUT_DIR="/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_inputs/vcfs"
 
+
+########################
+# Subsetting columns
+########################
 mkdir -p "${OUTPUT_DIR}"
 
 # confirm input and output directories
@@ -68,4 +79,3 @@ do
     echo "  wrote ${n_rows} unique variants"
     echo
 done
-
