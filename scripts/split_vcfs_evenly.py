@@ -15,7 +15,7 @@ Output: ~20 VCF-like files with approximately same number of lines/variants
 
 Note: Since step 1 output files have no header, every line is a variant
 ------------------------------------------------------------------------
-PSUEDOCODE: 
+PSEUDOCODE:
 initialize total_line_counter = 0
 
 for each VCF file:
