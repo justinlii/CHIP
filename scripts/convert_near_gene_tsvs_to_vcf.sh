@@ -53,9 +53,11 @@ do
     echo "  input:  $f"
     echo "  output: $out"
 
-    zcat "$f" \ # decompresses the .tsv.gz file and streams its contents line by line. It does not create an uncompressed temporary file
-      # BEGIN{OFS="\t"} means the output columns should be separated by tabs.
-      # NR>1 means only process rows after line 1. This skips the header row.
+    # decompresses the .tsv.gz file and streams its contents line by line. It does not create an uncompressed temporary file
+    # BEGIN{OFS="\t"} means the output columns should be separated by tabs.
+    # NR>1 means only process rows after line 1. This skips the header row.
+    
+    zcat "$f" \
       | awk 'BEGIN{OFS="\t"} NR>1 {
             key=$1 FS $2 FS $3 FS $4 FS $5;
             if (!seen[key]++) print $1,$2,$3,$4,$5
