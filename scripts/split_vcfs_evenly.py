@@ -53,7 +53,7 @@ def count_lines(file_paths):
         with path.open("r") as f:
             for _ in f:
                 total += 1
-  return total
+    return total
 
 def main():
     # Creates an argument parser. This lets your script accept command-line options 
