@@ -56,14 +56,21 @@ def count_lines(file_paths):
   return total
 
 def main():
+    # Creates an argument parser. This lets your script accept command-line options 
+    # e.g. --input-dir, --output-dir, and --num-chunks
     parser = argparse.ArgumentParser(
+        # the description is what appears if you run ```python scripts/split_vcfs_evenly.py --help```
         description="Split chromosome-level VCF-like files into evenly sized chunks."
     )
 
+    # adds optional command-line argument called --input-dir
     parser.add_argument(
         "--input-dir",
         default="/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_inputs/vcfs",
         help="Directory containing chromosome-level VCF-like files from Step 1.",
+
+        # if we just run ```python scripts/split_vcfs_evenly.py``` -> default filepath is used
+        # if we override ```python scripts/split_vcfs_evenly.py --input-dir /different/input/folder``` -> different/input/path can be used
     )
 
     parser.add_argument(
