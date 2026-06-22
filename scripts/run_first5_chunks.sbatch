@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=borzoi_first5
 #SBATCH --partition=bch-gpu
-#SBATCH --gpus=1
+#SBATCH --gpus=5
 #SBATCH --mem=20G
 #SBATCH --time=0-20:00
 #SBATCH --array=0-4%2
