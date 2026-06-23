@@ -8,7 +8,7 @@
 #SBATCH --output=/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_logs/borzoi_chunk_%A_%a.out
 #SBATCH --error=/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_logs/borzoi_chunk_%A_%a.err
 
-set -euo pipefail
+set -eo pipefail
 
 echo "Starting job"
 echo "SLURM_JOB_ID: ${SLURM_JOB_ID}"
@@ -22,7 +22,6 @@ echo "Start time: $(date)"
 
 module load miniforge/default
 conda activate /lab-share/CHIP-Strober-e2/Public/Justin_Li/envs/borzoi_py310
-export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
 
 #####################
 # Paths
