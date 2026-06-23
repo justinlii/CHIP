@@ -4,7 +4,7 @@
 #SBATCH --gpus=1
 #SBATCH --mem=20G
 #SBATCH --time=0-20:00
-#SBATCH --array=0-4%2
+#SBATCH --array=0-4
 #SBATCH --output=/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_logs/borzoi_chunk_%A_%a.out
 #SBATCH --error=/lab-share/CHIP-Strober-e2/Public/Justin_Li/borzoi_logs/borzoi_chunk_%A_%a.err
 
